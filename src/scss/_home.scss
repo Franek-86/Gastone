@@ -1,6 +1,11 @@
+// .test1 {
+//   display: flex;
+//   justify-content: space-between;
+// }
+
 .card {
   overflow: hidden;
-  // max-width: 350px;
+
   .col-4 {
     padding-left: 1.2rem;
   }
@@ -11,7 +16,7 @@
     width: 6rem;
     height: 17rem;
     background-color: mix(black, $primary, 30%);
-    transform: translate(-5rem, -5rem) rotate(27deg);
+    transform: translate(-5rem, -3.5rem) rotate(27deg);
     overflow: hidden;
   }
 }
@@ -33,25 +38,121 @@
   }
 }
 // $bg-img: url(./test1.png);
+.test {
+  position: relative;
+  min-height: 3rem;
+  margin-top: 1rem;
+}
+
+.btn-container {
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  transform: translateX(-100%);
+  background-color: $secondary;
+  height: 3rem;
+  width: 3rem;
+  background-image: url("../../../public/images/test1.1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 4px solid $secondary;
+  &:active {
+    background-color: $primary;
+    border: 5px solid $primary;
+    height: 2.8rem;
+    width: 2.8rem;
+    &:after {
+      animation: none;
+      outline: none;
+    }
+    &:before {
+      animation: none;
+      outline: none;
+    }
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    width: 103%;
+    height: 103%;
+    outline: 2px solid $secondary;
+    animation: smallDrop 2s linear infinite;
+    z-index: 1000;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    width: 103%;
+    height: 103%;
+    outline: 2px solid $secondary;
+    animation: smallDrop2 2s linear infinite;
+    z-index: 1000;
+  }
+}
+
+@keyframes smallDrop {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0.2;
+    transform: scale(1.3);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+@keyframes smallDrop2 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  70% {
+    opacity: 0.2;
+    transform: scale(1.5);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.4);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
 .card__text {
   color: mix(black, $primary, 50%);
   text-transform: capitalize;
 }
 .form-switch .form-check-input {
-  width: 6em;
+  width: 100%;
   height: 2rem;
   margin-left: -2.5em;
   background-image: url("../../../public/images/test1.1.png");
-  // background-image: var(--bs-form-switch-bg);
-  // background-image: url(https://img.freepik.com/premium-vector/locked-icon-isolated-white-background-vector-illustration_230920-1643.jpg?size=626&ext=jpg);
   border-radius: 0em;
-  // border-top-right-radius: 0.5rem;
-  // border-bottom-right-radius: 0.5rem;
   transition: background-position 0.15s ease-in-out;
 }
 
 .form-check-input {
-  background-color: $secondary;
+  background-color: mix(black, $secondary, 20%);
 }
 
 .btn-light {

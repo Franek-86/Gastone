@@ -2,6 +2,16 @@
   height: 100%;
   display: grid;
   place-items: center;
+  #{&}__unlocked {
+    border: 0.5rem solid;
+    border-radius: 50%;
+    width: 9rem;
+    height: 9rem;
+    display: grid;
+    place-items: center;
+    align-content: center;
+    position: relative;
+  }
   #{&}__icon__container {
     border: 0.5rem solid;
     border-radius: 50%;
@@ -10,12 +20,100 @@
     display: grid;
     place-items: center;
     align-content: center;
-    // padding: 2rem;
-    // font-size: 3rem;
+    position: relative;
+    &:active {
+      background-color: $primary;
+      height: 8rem;
+      width: 8rem;
+      &:before {
+        animation: none;
+        outline: none;
+      }
+      &:after {
+        animation: none;
+        outline: none;
+      }
+    }
+    &:before {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      width: 103%;
+      height: 103%;
+      outline: 2px solid $secondary;
+      animation: smallDrop 2s linear infinite;
+      z-index: 1000;
+    }
+    &:after {
+      position: absolute;
+      content: "";
+      border-radius: 50%;
+      width: 103%;
+      height: 103%;
+      outline: 2px solid $secondary;
+      animation: smallDrop2 2s linear infinite;
+      z-index: 1000;
+    }
   }
   #{&}__icon {
     // border: 2px solid red;
     font-size: 3rem;
     transform: translateY(-5%);
+  }
+}
+
+.no-anime .locker__container .locker__container__icon__container:before,
+.no-anime .locker__container .locker__container__icon__container:after {
+  animation: none !important;
+}
+
+// .locker__container__icon__container:active:before {
+//   animation-play-state: paused;
+// }
+
+@keyframes smallDrop {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  70% {
+    opacity: 0.2;
+    transform: scale(1.2);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+@keyframes smallDrop2 {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  20% {
+    opacity: 0.5;
+    transform: scale(1.2);
+  }
+  70% {
+    opacity: 0.2;
+    transform: scale(1.3);
+  }
+  80% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+  90% {
+    opacity: 0;
+    transform: scale(1);
   }
 }

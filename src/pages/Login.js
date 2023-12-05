@@ -54,6 +54,7 @@ const Login = () => {
               type='submit'
               className='d-block mx-auto mt-3'
               variant='secondary'
+              //style={{ textColor: "white" }}
             >
               Entra
             </Button>{" "}

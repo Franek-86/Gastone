@@ -10,9 +10,12 @@ const SingleItem = ({ item, index, checkedState, handleOnChange }) => {
   const { text, icon } = item;
 
   return (
-    <Col>
+    <Col
+      xs={8}
+      style={{ maxWidth: "350px", marginLeft: "auto", marginRight: "auto" }}
+    >
       <Card className='shadow bg-body-tertiary'>
-        <Row xs={1} md={1} className='g-3'>
+        <Row xs={1} md={1} className='g-3 '>
           <Col xs={4} md={4}>
             <div className='card__icon'>
               <div className='card__icon__container'>{icon}</div>
@@ -23,34 +26,23 @@ const SingleItem = ({ item, index, checkedState, handleOnChange }) => {
               <Card.Title>
                 <h5 className='card__text'>{text}</h5>
               </Card.Title>
-              <Form>
-                {/* <input
-                  type='checkbox'
-                  onChange={() => handleOnChange(index)}
-                  checked={checkedState[index]}
-                /> */}
-                {/* <div class='switch btn on btn-primary' style='width: 100px;'>
-                  <div class='switch-group'>
-                    <span class='switch-on btn btn-primary'>On</span>
-                    <span class='switch-off btn btn-light'>Off</span>
-                    <span class='switch-handle btn btn-light'></span>
-                  </div>
-                </div> */}
-                <Form.Check // prettier-ignore
-                  type='switch'
-                  id='custom-switch'
-                  // label='Check this switch'
-                  onChange={() => handleOnChange(index)}
-                  checked={checkedState[index]}
-                />
-                {/* <BootstrapSwitchButton
-                  width={100}
-                  // id={`custom-checkbox-${index}`}
-                  // name={text}
-                  // value={text}
-                  onChange={() => handleOnChange(index)}
-                  checked={checkedState[index]}
-                /> */}
+              <Form className='test'>
+                {index === 0 || index === 1 || index === 2 ? (
+                  <div
+                    className='btn-container'
+                    onClick={() => {
+                      handleOnChange(index);
+                    }}
+                  ></div>
+                ) : (
+                  <Form.Check // prettier-ignore
+                    type='switch'
+                    id='custom-switch'
+                    // label='Check this switch'
+                    onChange={() => handleOnChange(index)}
+                    checked={checkedState[index]}
+                  />
+                )}
               </Form>
             </Card.Body>
           </Col>

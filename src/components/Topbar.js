@@ -7,6 +7,9 @@ import { useGlobalContext } from "../context/userContext";
 
 const TopBar = ({ doorPage }) => {
   const { userName } = useGlobalContext();
+  const clearUserStorage = () => {
+    localStorage.removeItem("user");
+  };
   return (
     <Navbar className='bg-body-tertiary mb-4'>
       <Container>
@@ -21,7 +24,9 @@ const TopBar = ({ doorPage }) => {
             </Link>
           ) : (
             <Navbar.Text>
-              <a href='/'>{userName}</a>
+              <a onClick={clearUserStorage} href='/'>
+                {userName ? "logout" : "login"}
+              </a>
             </Navbar.Text>
           )}
         </Navbar.Collapse>

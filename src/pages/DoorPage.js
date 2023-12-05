@@ -29,11 +29,15 @@ const DoorPage = () => {
               >
                 <div className='locker__container'>
                   <div
-                    className='locker__container__icon__container'
+                    className={
+                      isLocked
+                        ? "locker__container__icon__container"
+                        : "locker__container__unlocked "
+                    }
                     style={{
                       borderColor: isLocked ? "#ffa3af" : "#85bd4b",
                     }}
-                    onClick={() => setDoorIsLocked(!isLocked)}
+                    onClick={() => setDoorIsLocked(false)}
                   >
                     {/* <BsFillLockFill className='' /> */}
                     <div className='locker__container__icon'>

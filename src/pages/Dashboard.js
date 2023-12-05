@@ -40,6 +40,9 @@ function DashBoard() {
         return item;
       }
 
+      if (position === 0 || position === 1) {
+        return index === position ? true : item;
+      }
       return index === position ? !item : item;
     });
 
@@ -49,7 +52,7 @@ function DashBoard() {
     <>
       <TopBar />
       <Container>
-        <Row xs={1} md={2} className='g-4'>
+        <Row xs={1} className='g-4'>
           {allItems.map((item, index) => (
             <SingleItem
               key={index}

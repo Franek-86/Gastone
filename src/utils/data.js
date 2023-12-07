@@ -4,6 +4,11 @@ import { BsBuildingLock } from "react-icons/bs";
 import { BsLightningChargeFill } from "react-icons/bs";
 import { BsBatteryCharging } from "react-icons/bs";
 import { BsConeStriped } from "react-icons/bs";
+import { MdHeatPump } from "react-icons/md";
+import { LiaTemperatureLowSolid } from "react-icons/lia";
+import { FaTemperatureLow } from "react-icons/fa6";
+import { LiaWaterSolid } from "react-icons/lia";
+import { FaFaucet } from "react-icons/fa";
 
 export const allItems = [
   {
@@ -18,7 +23,12 @@ export const allItems = [
   },
   {
     id: 3,
-    text: "porta ingresso",
+    text: "apri ingresso",
+    icon: <BsBuildingLock className='card__icon__logo' />,
+  },
+  {
+    id: 3,
+    text: "chiudi ingresso",
     icon: <BsBuildingLock className='card__icon__logo' />,
   },
   {
@@ -33,12 +43,22 @@ export const allItems = [
   },
   {
     id: 6,
-    text: "non si vede",
-    icon: <BsConeStriped className='card__icon__logo' />,
+    text: "pompa",
+    icon: <FaFaucet className='card__icon__logo' />,
   },
   {
     id: 7,
-    text: "non si vede",
-    icon: <BsConeStriped className='card__icon__logo' />,
+    text: "fancoil",
+    icon: <LiaTemperatureLowSolid className='card__icon__logo' />,
+  },
+  {
+    id: 8,
+    text: "condizionatore",
+    icon: <MdHeatPump className='card__icon__logo' />,
+  },
+  {
+    id: 9,
+    text: "caldaia",
+    icon: <LiaWaterSolid className='card__icon__logo' />,
   },
 ];

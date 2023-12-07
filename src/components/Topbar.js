@@ -24,7 +24,7 @@ const TopBar = ({ doorPage }) => {
             </Link>
           ) : (
             <Navbar.Text>
-              <a onClick={clearUserStorage} href='/'>
+              <a className='user' onClick={clearUserStorage} href='/'>
                 {userName ? "logout" : "login"}
               </a>
             </Navbar.Text>

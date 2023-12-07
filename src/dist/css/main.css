@@ -11865,6 +11865,10 @@ body {
   font-family: "Yanone Kaffeesatz", sans-serif;
 }
 
+.user {
+  text-decoration: none;
+}
+
 .card {
   overflow: hidden;
 }
@@ -12030,16 +12034,6 @@ body {
   display: grid;
   place-items: center;
 }
-.locker__container .locker__container__unlocked {
-  border: 0.5rem solid;
-  border-radius: 50%;
-  width: 9rem;
-  height: 9rem;
-  display: grid;
-  place-items: center;
-  align-content: center;
-  position: relative;
-}
 .locker__container .locker__container__icon__container {
   border: 0.5rem solid;
   border-radius: 50%;
@@ -12069,7 +12063,7 @@ body {
   border-radius: 50%;
   width: 103%;
   height: 103%;
-  outline: 2px solid #ffa3af;
+  outline: 2px solid #85bd4b;
   animation: smallDrop 2s linear infinite;
   z-index: 1000;
 }
@@ -12079,13 +12073,24 @@ body {
   border-radius: 50%;
   width: 103%;
   height: 103%;
-  outline: 2px solid #ffa3af;
+  outline: 2px solid #85bd4b;
   animation: smallDrop2 2s linear infinite;
   z-index: 1000;
 }
 .locker__container .locker__container__icon {
   font-size: 3rem;
   transform: translateY(-5%);
+}
+.locker__container .test1:active {
+  background-color: #ffa3af !important;
+  height: 8rem;
+  width: 8rem;
+}
+.locker__container .test1:before {
+  outline: 2px solid #ffa3af !important;
+}
+.locker__container .test1:after {
+  outline: 2px solid #ffa3af !important;
 }
 
 .no-anime .locker__container .locker__container__icon__container:before,

@@ -2,16 +2,6 @@
   height: 100%;
   display: grid;
   place-items: center;
-  #{&}__unlocked {
-    border: 0.5rem solid;
-    border-radius: 50%;
-    width: 9rem;
-    height: 9rem;
-    display: grid;
-    place-items: center;
-    align-content: center;
-    position: relative;
-  }
   #{&}__icon__container {
     border: 0.5rem solid;
     border-radius: 50%;
@@ -40,7 +30,7 @@
       border-radius: 50%;
       width: 103%;
       height: 103%;
-      outline: 2px solid $secondary;
+      outline: 2px solid $primary;
       animation: smallDrop 2s linear infinite;
       z-index: 1000;
     }
@@ -50,7 +40,7 @@
       border-radius: 50%;
       width: 103%;
       height: 103%;
-      outline: 2px solid $secondary;
+      outline: 2px solid $primary;
       animation: smallDrop2 2s linear infinite;
       z-index: 1000;
     }
@@ -59,6 +49,19 @@
     // border: 2px solid red;
     font-size: 3rem;
     transform: translateY(-5%);
+  }
+  .test1 {
+    &:active {
+      background-color: $secondary !important;
+      height: 8rem;
+      width: 8rem;
+    }
+    &:before {
+      outline: 2px solid $secondary !important;
+    }
+    &:after {
+      outline: 2px solid $secondary !important;
+    }
   }
 }
 

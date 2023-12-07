@@ -1,6 +1,6 @@
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
@@ -10,44 +10,38 @@ import { allItems } from "../utils/data";
 import { useState } from "react";
 import TopBar from "../components/Topbar";
 import Footer from "../components/Footer";
-import { useGlobalAppContext } from "../context/appContext";
 
 function DashBoard() {
-  // const {
-  //   isLoading,
-  //   gate1,
-  //   gate2,
-  //   door,
-  //   lockerCharger,
-  //   general,
-  //   unknown1,
-  //   unknown2,
-  // } = useGlobalAppContext();
-  const test = useGlobalAppContext();
-  // console.log(Object.keys(test).length - 1);
-  let objLength = Object.keys(test).length - 1;
+  const [test, setTest] = useState([
+    { name: "ricarica serratura", checked: false },
+    { name: "generale", checked: false },
+    { name: "pompa", checked: false },
+    { name: "fancoil", checked: false },
+    { name: "condizionatore", checked: false },
+    { name: "caldaia", checked: false },
+  ]);
 
-  const [checkedState, setCheckedState] = useState(
-    new Array(objLength).fill(false)
-  );
-  const navigate = useNavigate();
-  const handleOnChange = (position) => {
-    const updatedCheckedState = checkedState.map((item, index) => {
-      if (position === 2) {
-        console.log("this one");
-        navigate("/door");
-
-        return item;
+  const handleOnChange = (test1) => {
+    let newState = test.map((item) => {
+      if (item.name === test1) {
+        item.checked = !item.checked;
       }
-
-      if (position === 0 || position === 1) {
-        return index === position ? true : item;
-      }
-      return index === position ? !item : item;
+      return item;
     });
-
-    setCheckedState(updatedCheckedState);
+    setTest(newState);
   };
+  const checked1 = () => {
+    let test6 = test.map((item) => {
+      // console.log(item.checked);
+      let test = item.checked;
+      console.log(test);
+      return test;
+    });
+    console.log(test6);
+    return test6;
+  };
+  checked1();
+
   return (
     <>
       <TopBar />
@@ -58,8 +52,10 @@ function DashBoard() {
               key={index}
               index={index}
               item={item}
-              checkedState={checkedState}
+              test={test}
+              setTest={setTest}
               handleOnChange={handleOnChange}
+              checked1={checked1}
             />
           ))}
         </Row>

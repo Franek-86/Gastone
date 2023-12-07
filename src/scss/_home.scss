@@ -2,7 +2,9 @@
 //   display: flex;
 //   justify-content: space-between;
 // }
-
+.user {
+  text-decoration: none;
+}
 .card {
   overflow: hidden;
 
@@ -156,20 +158,7 @@
 }
 
 .btn-light {
-  // --bs-btn-color: #000;
   --bs-btn-bg: #ffa3af;
-  // --bs-btn-border-color: #f8f9fa;
-  // --bs-btn-hover-color: #000;
-  // --bs-btn-hover-bg: #d3d4d5;
-  // --bs-btn-hover-border-color: #c6c7c8;
-  // --bs-btn-focus-shadow-rgb: 211, 212, 213;
-  // --bs-btn-active-color: #000;
-  // --bs-btn-active-bg: #c6c7c8;
-  // --bs-btn-active-border-color: #babbbc;
-  // --bs-btn-active-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
-  // --bs-btn-disabled-color: #000;
-  // --bs-btn-disabled-bg: #f8f9fa;
-  // --bs-btn-disabled-border-color: #f8f9fa;
 }
 
 .app_footer {
@@ -178,7 +167,11 @@
   width: 100%;
   height: 0.5rem;
 }
-
+// @media screen and (max-width: 464px) {
+//   .btn-container {
+//     transform: translateX(-50%);
+//   }
+// }
 //---------------------------- this below you may want to delete---------------------------------------
 
 // class="switch btn off btn-light"

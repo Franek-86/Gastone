@@ -7,20 +7,11 @@ import Container from "react-bootstrap/Container";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import { Link, Navigate, useNavigate } from "react-router-dom";
 
-const SingleItem = ({
-  item,
-  index,
-  checkedState,
-  handleOnChange,
-  test,
-  setTest,
-  checked1,
-}) => {
+const SingleItem = ({ item, index, handleOnChange, checked1 }) => {
   const navigate = useNavigate();
-  const { text, icon, id } = item;
+  const { text, icon } = item;
 
   const something = (index) => {
-    // console.log(index);
     if (index === 0) {
       console.log("apri portone esterno");
     }
@@ -39,26 +30,6 @@ const SingleItem = ({
     }
   };
 
-  // const test2 = () => {
-  //   if (index > 3) {
-  //     let ciao = test.map((item, index) => {
-  //       return (
-  //         <Form.Check // prettier-ignore
-  //           type='switch'
-  //           id='custom-switch'
-  //           // label='Check this switch'
-  //           // onChange={() => handleOnChange(index)}
-  //           // checked={checkedState[index]}
-  //         />
-  //       );
-  //     });
-  //     return ciao;
-  //   }
-  // };
-  // let test4 = test.filter((item) => {
-  //   return item.name === item;
-  // });
-  // console.log(test4);
   return (
     <Col
       xs={8}
@@ -96,10 +67,13 @@ const SingleItem = ({
                       id='custom-switch'
                       name={text}
                       // label='Check this switch'
-                      onChange={() => handleOnChange(text)}
-                      // checked={checked1}
+                      onChange={() => {
+                        handleOnChange(text);
+                      }}
+                      checked={checked1(text)}
                     />
                   )
+
                   // test2()
                 }
               </Form>

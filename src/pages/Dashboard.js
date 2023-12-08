@@ -30,17 +30,17 @@ function DashBoard() {
     });
     setTest(newState);
   };
-  const checked1 = () => {
-    let test6 = test.map((item) => {
-      // console.log(item.checked);
-      let test = item.checked;
-      console.log(test);
-      return test;
+
+  let checked1 = (test2) => {
+    let test7 = test.find((item) => {
+      if (item.name === test2) {
+        return item;
+      }
     });
-    console.log(test6);
-    return test6;
+    let test8 = test7.checked;
+
+    return test8;
   };
-  checked1();
 
   return (
     <>
@@ -53,9 +53,9 @@ function DashBoard() {
               index={index}
               item={item}
               test={test}
+              checked1={checked1}
               setTest={setTest}
               handleOnChange={handleOnChange}
-              checked1={checked1}
             />
           ))}
         </Row>

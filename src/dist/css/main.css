@@ -11875,6 +11875,9 @@ body {
 .card .col-4 {
   padding-left: 1.2rem;
 }
+.card .col-8 {
+  max-height: 125.19px;
+}
 .card .col-md-4::before {
   position: absolute;
   content: "";
@@ -11956,6 +11959,94 @@ body {
   z-index: 1000;
 }
 
+.btn-container-entrance {
+  position: absolute;
+  background-color: #ffa3af;
+  height: 3rem;
+  width: 3rem;
+  background-image: url("../../../public/images/test1.1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 4px solid #ffa3af;
+}
+.btn-container-entrance:active {
+  background-color: #85bd4b;
+  border: 5px solid #85bd4b;
+  height: 2.8rem;
+  width: 2.8rem;
+}
+.btn-container-entrance:active:after {
+  animation: none;
+  outline: none;
+}
+.btn-container-entrance:active:before {
+  animation: none;
+  outline: none;
+}
+.btn-container-entrance:after {
+  position: absolute;
+  content: "";
+  width: 103%;
+  height: 103%;
+  outline: 2px solid #ffa3af;
+  animation: smallDrop 2s linear infinite;
+  z-index: 1000;
+}
+.btn-container-entrance:before {
+  position: absolute;
+  content: "";
+  width: 103%;
+  height: 103%;
+  outline: 2px solid #ffa3af;
+  animation: smallDrop2 2s linear infinite;
+  z-index: 1000;
+}
+
+.test-1 {
+  position: relative;
+  display: block;
+  height: 2.5rem;
+}
+.test-1:before {
+  position: absolute;
+  left: 50%;
+  top: -0.7rem;
+  content: "";
+  width: 2px;
+  height: 70%;
+  background-color: #ffa3af;
+  opacity: 0.5;
+  z-index: 1000;
+}
+.test-1:after {
+  position: absolute;
+  top: -0.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #ffa3af;
+  opacity: 0.5;
+  z-index: 1000;
+}
+
+.test-3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.open {
+  transform: translateX(0%);
+  left: 0;
+}
+
+.close {
+  transform: translateX(0%);
+  right: 0;
+}
+
 @keyframes smallDrop {
   0% {
     opacity: 1;
@@ -12027,6 +12118,21 @@ body {
   display: block;
   width: 100%;
   height: 0.5rem;
+}
+
+.text-span {
+  margin-bottom: -5px;
+  font-size: 14px;
+  font-style: italic;
+  color: #ffa3af;
+}
+
+.card__text_door {
+  margin-bottom: -6px !important;
+}
+
+.test-3 {
+  text-transform: capitalize;
 }
 
 .locker__container {

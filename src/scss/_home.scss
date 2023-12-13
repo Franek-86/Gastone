@@ -11,6 +11,9 @@
   .col-4 {
     padding-left: 1.2rem;
   }
+  .col-8 {
+    max-height: 125.19px;
+  }
   .col-md-4::before {
     position: absolute;
     content: "";
@@ -92,6 +95,99 @@
     z-index: 1000;
   }
 }
+.btn-container-entrance {
+  position: absolute;
+  // left: 50%;
+  // right: 50%;
+  // transform: translateX(-100%);
+  background-color: $secondary;
+  height: 3rem;
+  width: 3rem;
+  background-image: url("../../../public/images/test1.1.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  border: 4px solid $secondary;
+  &:active {
+    background-color: $primary;
+    border: 5px solid $primary;
+    height: 2.8rem;
+    width: 2.8rem;
+    &:after {
+      animation: none;
+      outline: none;
+    }
+    &:before {
+      animation: none;
+      outline: none;
+    }
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    width: 103%;
+    height: 103%;
+    outline: 2px solid $secondary;
+    animation: smallDrop 2s linear infinite;
+    z-index: 1000;
+  }
+  &:before {
+    position: absolute;
+    content: "";
+    width: 103%;
+    height: 103%;
+    outline: 2px solid $secondary;
+    animation: smallDrop2 2s linear infinite;
+    z-index: 1000;
+  }
+}
+
+.test-1 {
+  position: relative;
+  display: block;
+  // border-bottom: 2px dotted $secondary;
+  height: 2.5rem;
+
+  &:before {
+    position: absolute;
+    left: 50%;
+    top: -0.7rem;
+    // bottom: 0.5rem;
+    content: "";
+    width: 2px;
+    height: 70%;
+    background-color: $secondary;
+    opacity: 0.5;
+    z-index: 1000;
+  }
+
+  &:after {
+    position: absolute;
+    top: -0.7rem;
+    left: 50%;
+    transform: translateX(-50%);
+    // top: 1rem;
+    content: "";
+    width: 100%;
+    height: 2px;
+    background-color: $secondary;
+    opacity: 0.5;
+    z-index: 1000;
+  }
+}
+.test-3 {
+  display: flex;
+  justify-content: space-between;
+}
+
+.open {
+  transform: translateX(0%);
+  left: 0;
+}
+.close {
+  transform: translateX(0%);
+  right: 0;
+}
 
 @keyframes smallDrop {
   0% {
@@ -139,7 +235,9 @@
     transform: scale(1);
   }
 }
-
+// .card-body {
+//   position: relative;
+// }
 .card__text {
   color: mix(black, $primary, 50%);
   text-transform: capitalize;
@@ -167,85 +265,17 @@
   width: 100%;
   height: 0.5rem;
 }
-// @media screen and (max-width: 464px) {
-//   .btn-container {
-//     transform: translateX(-50%);
-//   }
-// }
-//---------------------------- this below you may want to delete---------------------------------------
 
-// class="switch btn off btn-light"
-// class="switch btn on btn-primary"
+.text-span {
+  margin-bottom: -5px;
+  font-size: 14px;
+  font-style: italic;
+  color: $secondary;
+}
 
-// .switch.btn.btn-light,
-// .switch.btn.btn-outline-light {
-//   border-color: rgba(0, 0, 0, 0.15);
-// }
-// .switch {
-//   position: relative;
-//   overflow: hidden;
-// }
-// .switch-on.btn {
-//   padding-right: 1.5rem;
-// }
-// .switch-on {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 50%;
-//   margin: 0;
-//   border: 0;
-//   border-radius: 0;
-// }
-// .switch-off {
-//     position: absolute;
-//     top: 0;
-//     bottom: 0;
-//     left: 50%;
-//     right: 0;
-//     margin: 0;
-//     border: 0;
-//     border-radius: 0;
-//     box-shadow: none;
-// }
-// .switch-off.btn {
-//     padding-left: 1.5rem;
-// }
-
-// .switch.off .switch-group {
-//     left: -100%;
-// }
-// .switch-handle {
-//     position: relative;
-//     margin: 0 auto;
-//     padding-top: 0px;
-//     padding-bottom: 0px;
-//     height: 100%;
-//     width: 0px;
-//     border-width: 0 1px;
-//     background-color: #fff;
-// }
-
-// .switch-group {
-//   position: absolute;
-//   width: 200%;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   transition: left 0.35s;
-//   -webkit-transition: left 0.35s;
-//   -moz-user-select: none;
-//   -webkit-user-select: none;
-// }
-
-// .switch-on {
-//   position: absolute;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 50%;
-//   margin: 0;
-//   border: 0;
-//   border-radius: 0;
-// }
+.card__text_door {
+  margin-bottom: -6px !important;
+}
+.test-3 {
+  text-transform: capitalize;
+}

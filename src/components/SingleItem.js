@@ -9,7 +9,7 @@ import { Link, Navigate, useNavigate } from "react-router-dom";
 
 const SingleItem = ({ item, index, handleOnChange, checked1 }) => {
   const navigate = useNavigate();
-  const { text, icon } = item;
+  const { text, icon, text1, text2 } = item;
 
   const something = (index) => {
     if (index === 0) {
@@ -23,11 +23,9 @@ const SingleItem = ({ item, index, handleOnChange, checked1 }) => {
       // navigate("/door");
       navigate("/door", { state: { state: open } });
     }
-    if (index === 3) {
-      const close = "chuidi porta d'ingresso";
-      // navigate("/door");
-      navigate("/door", { state: { state: close } });
-    }
+  };
+  const somethingElse = (index, test) => {
+    navigate("/door", { state: { state: test } });
   };
 
   return (
@@ -49,18 +47,51 @@ const SingleItem = ({ item, index, handleOnChange, checked1 }) => {
           </Col>
           <Col xs={8} md={8}>
             <Card.Body>
+              {text1 ? (
+                <Card.Title>
+                  <div className='test-3'>
+                    <h6 className='card__text_door'>porta d'ingresso</h6>
+                  </div>
+                </Card.Title>
+              ) : null}
               <Card.Title>
-                <h6 className='card__text'>{text}</h6>
+                <div className='test-3'>
+                  {!text2 ? (
+                    <h6 className='card__text'>{text}</h6>
+                  ) : (
+                    <span className='text-span'>{text1}</span>
+                  )}
+                  {text2 && <span className='text-span'>{text2}</span>}
+                </div>
               </Card.Title>
               <Form className='test'>
                 {
-                  index >= 0 && index <= 3 ? (
+                  index >= 0 && index < 2 ? (
                     <div
                       className='btn-container'
                       onClick={() => {
                         something(index);
                       }}
                     ></div>
+                  ) : index === 2 ? (
+                    <div className='test-2'>
+                      <div className='test-1'>
+                        <div
+                          className='btn-container-entrance open'
+                          onClick={() => {
+                            const open = "apri porta d'ingresso";
+                            somethingElse(index, open);
+                          }}
+                        ></div>
+                        <div
+                          className='btn-container-entrance close'
+                          onClick={() => {
+                            const close = "chuidi porta d'ingresso";
+                            somethingElse(index, close);
+                          }}
+                        ></div>
+                      </div>
+                    </div>
                   ) : (
                     <Form.Check // prettier-ignore
                       type='switch'

@@ -23,13 +23,11 @@ export const allItems = [
   },
   {
     id: 3,
-    text: "apri ingresso",
+    text: "ingresso",
+    text1: "apri",
+    text2: "chiudi",
     icon: <BsBuildingLock className='card__icon__logo' />,
-  },
-  {
-    id: 3,
-    text: "chiudi ingresso",
-    icon: <BsBuildingLock className='card__icon__logo' />,
+    icon2: <BsBuildingLock className='card__icon__logo' />,
   },
   {
     id: 4,
